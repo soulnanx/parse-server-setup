@@ -47,12 +47,12 @@ Mais detalhes em: [github parse-server push](https://github.com/ParsePlatform/pa
        {
          "user":"user1",
          "pass":"pass1",
-         "apps": [{"appId": "app.mto.koco"}, {"appId": "app.mto.koco2"}]
+         "apps": [{"appId": "app.mto.loko"}, {"appId": "app.mto.loko2"}]
        },
        {
          "user":"user2",
          "pass":"pass2",
-         "apps": [{"appId": "app.mto.koco"}]
+         "apps": [{"appId": "app.mto.loko"}]
        }  
      ]
   }
