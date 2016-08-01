@@ -16,7 +16,7 @@ Mais detalhes em: [github parse-server push](https://github.com/ParsePlatform/pa
   {
     "appId": "app.mto.loko",
     "masterKey": "chave",
-    "databaseURI" : "mongodb://host/test",
+    "databaseURI" : "mongodb://host:port/dbName",
     "push": {
       "android": {
         "senderId": "sender",
