@@ -32,32 +32,34 @@ Mais detalhes em: [github parse-server push](https://github.com/ParsePlatform/pa
   }
 ```
   
-<h4>Exemplo de arquivo de configurações do parse-server</h4>
+<h4>Exemplo de arquivo de configurações do parse-dashboard (parse-dashboard-config.json)</h4>
 ```json
   {
     "apps": [
       {
         "serverURL": "http://localhost:1337/parse",
-        "appId": "app.mto.loco",
+        "appId": "app.mto.loko",
         "masterKey": "senha",
         "appName": "Super app"
       }
     ],
     "users": [
-     {
-       "user":"user1",
-       "pass":"pass1",
-       "apps": [{"appId": "app.mto.loco"}, {"appId": "app.mto.loco2"}]
-     },
-     {
-       "user":"user2",
-       "pass":"pass2",
-       "apps": [{"appId": "app.mto.loco"}]
-     }  ]
+       {
+         "user":"user1",
+         "pass":"pass1",
+         "apps": [{"appId": "app.mto.koco"}, {"appId": "app.mto.koco2"}]
+       },
+       {
+         "user":"user2",
+         "pass":"pass2",
+         "apps": [{"appId": "app.mto.koco"}]
+       }  
+     ]
   }
 ```
 
 <h4>Subir o servidor</h4>
+  - <i>mongodb-runner</i> ```mongodb-runner start```  
   - <i>parse-server</i> ```<VERBOSE=1 para logs> parse-server parse-server-config.json```  
   - <i>parse-dashboard</i> ```parse-dashboard --config parse-dashboard-config.json``` 
 
