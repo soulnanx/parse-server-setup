@@ -1,12 +1,12 @@
 {
-  "databaseURI": "mongodb://192.168.99.100:27017/dev",
+  "databaseURI": "mongodb:/host:27017/dev",
   "appId": "app.id.new",
   "masterKey": "888",
-  "serverURL": "http://localhost:1337/parse",
+  "serverURL": "http://host:1337/parse",
   "push": {
     "android": {
-      "senderId": "369095485831", 
-      "apiKey": "AIzaSyBE_Zx37B70pI9x6StaZY_onKhGpFt6v4k"
+      "senderId": "sender", 
+      "apiKey": "key"
     }
   }
 }
