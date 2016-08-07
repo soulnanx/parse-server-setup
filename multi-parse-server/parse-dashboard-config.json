@@ -1,0 +1,23 @@
+{
+  "apps":[
+    {
+      "serverURL": "http://192.168.99.100:1337/parse",
+      "appId": "app.id.new",
+      "masterKey": "888",
+      "appName": "app"
+    },
+    {
+      "serverURL": "http://192.168.99.100:1338/parse",
+      "appId": "app.id.new2",
+      "masterKey": "888",
+      "appName": "app2"
+    }
+  ],
+  "users": [
+    {
+      "user":"user",
+      "pass":"123@mudar",
+      "apps": [{"appId": "app.id.new"}, {"appId": "app.id.new2"} ]
+    }
+  ]
+}

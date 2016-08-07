@@ -1,0 +1,28 @@
+parse-server:
+  image: parse-server
+  ports:
+    - 1337:1337
+  volumes:
+    - ./parse-server-config.json:/opt/parse/parse-server-config.json
+  command: parse-server parse-server-config.json
+
+parse-server2:
+  image: parse-server
+  ports:
+    - 1338:1337
+  volumes:
+    - ./parse-server-config2.json:/opt/parse/parse-server-config2.json
+  command: parse-server parse-server-config2.json
+
+parse-dashboard:
+  image: parse-dashboard
+  environment:
+    PARSE_DASHBOARD_ALLOW_INSECURE_HTTP: "1"
+  ports:
+    - 4040:4040
+  volumes:
+    - ./parse-dashboard-config.json:/opt/parse/parse-dashboard-config.json
+  links: 
+    - parse-server
+  command: parse-dashboard --config parse-dashboard-config.json
+
