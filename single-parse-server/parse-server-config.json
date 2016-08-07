@@ -1,8 +1,4 @@
 {
-  "databaseURI": "mongodb://host:27017/dev",
-  "appId": "app.id.new",
-  "masterKey": "888",
-  "serverURL": "http://localhost:1337/parse",
   "push": {
     "android": {
       "senderId": "sender", 
