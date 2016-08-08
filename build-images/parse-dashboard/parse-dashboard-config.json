@@ -16,7 +16,7 @@
   "users": [
     {
       "user":"user",
-      "pass":"pass",
+      "pass":"123@mudar",
       "apps": [{"appId": "app.id.new"}, {"appId": "app.id.new2"} ]
     }
   ]

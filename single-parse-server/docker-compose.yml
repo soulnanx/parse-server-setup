@@ -4,11 +4,13 @@ parse-server:
 #    PORT: 1337
     PARSE_SERVER_APPLICATION_ID: "app.id.new"
     PARSE_SERVER_MASTER_KEY: 888
-    PARSE_SERVER_DATABASE_URI: "mongodb://host:27017/dev"
+    PARSE_SERVER_DATABASE_URI: "mongodb://mongo:27017/dev"
     PARSE_SERVER_URL: "http://localhost:1337/parse"
 #    PARSE_SERVER_CLOUD_CODE_MAIN: /script # caminho do main.js
   ports:
     - 1337:1337
+  links:
+    - mongo
   volumes:
     - ./parse-server-config.json:/opt/parse/parse-server-config.json
   command: parse-server parse-server-config.json
@@ -17,7 +19,7 @@ parse-dashboard:
   image: parse-dashboard
   environment:
     PARSE_DASHBOARD_ALLOW_INSECURE_HTTP: "1"
-    PARSE_DASHBOARD_SERVER_URL: "http://host:1337/parse"
+    PARSE_DASHBOARD_SERVER_URL: "http://192.168.99.100:1337/parse"
     PARSE_DASHBOARD_MASTER_KEY: "888"
     PARSE_DASHBOARD_APP_ID: "app.id.new"
     PARSE_DASHBOARD_APP_NAME: "app"
@@ -27,3 +29,9 @@ parse-dashboard:
     - 4040:4040
   command: parse-dashboard 
 
+mongo:
+  image: mongo
+  ports:
+    - 27017:27017
+  volumes:
+    - ./volumes/data/db:/data/db
