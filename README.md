@@ -1,6 +1,33 @@
 # parse-server
 Como configurar o parse-server
 
+<h2>Parse-server com docker</h2>
+- clone o parse-server-setup
+  - ```git clone git@github.com:soulnanx/parse-server-setup.git```
+- crie a imagem do parse-server e parse-server dashboard
+  - na pasta build-images/parse-server execute ```docker build -t parse-server .```
+  - na pasta build-images/parse-dashboard execute ```docker build -t parse-dashboard .```
+   
+- escolha a arquitetura
+  - multi-parse-server: <i>varios projetos parse-server rodando e um dashboard administrando</i>
+  - single-parse-server: <i>um parse-server para um dashboard</i>
+   
+<h3>multi-parse-server</h3>
+- vá até a pasta multi-parse-server e adicione suas configurações de push-notification e configurações do seu projeto no arquivo parse-server-config.json
+  - para cada parse-server novo, você terá que criar um novo parse-server-config.json ex:parse-server-config2.json
+- no docker-compose preencha as variaveis com as informações do seu projeto
+  - para cada parse-server novo, você terá que criar um bloco de parse-server e apontar no ```command: parse-server parse-server-config.json``` o arquivo que você criou no passo anterior 
+- suba o servidor com ```docker-compose up -d```
+- obs: esteja com o container do mongo já em execução
+
+<h3>single-parse-server</h3>
+- vá até a pasta single-parse-server e adicione suas configurações de push-notification no arquivo parse-server-config.json
+- no docker-compose preencha as variaveis com as informações do seu projeto
+- suba o servidor com ```docker-compose up -d```
+- obs: esteja com o container do mongo já em execução
+
+<h2>Parse-server com npm</h2>
+
 <h4>Caso tenha algum problema com o npm no Mac OSX</h4>
 ```npm update npm -g```
 
