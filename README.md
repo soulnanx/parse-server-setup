@@ -1,7 +1,9 @@
 # parse-server
 Como configurar o parse-server
 
-<h2>Parse-server com docker</h2>
+Parse-server com docker
+--
+
 - clone o parse-server-setup
   - ```git clone git@github.com:soulnanx/parse-server-setup.git```
 - crie a imagem do parse-server e parse-server dashboard
@@ -9,10 +11,12 @@ Como configurar o parse-server
   - na pasta build-images/parse-dashboard execute ```docker build -t parse-dashboard .```
    
 - escolha a arquitetura
-  - multi-parse-server: <i>varios projetos parse-server rodando e um dashboard administrando</i>
-  - single-parse-server: <i>um parse-server para um dashboard</i>
+  - multi-parse-server: _varios projetos parse-server rodando e um dashboard administrando_
+  - single-parse-server: _um parse-server para um dashboard_
    
-<h3>multi-parse-server</h3>
+multi-parse-server
+--
+
 - vá até a pasta multi-parse-server e adicione suas configurações de push-notification e configurações do seu projeto no arquivo parse-server-config.json
   - para cada parse-server novo, você terá que criar um novo parse-server-config.json ex:parse-server-config2.json
 - no docker-compose preencha as variaveis com as informações do seu projeto
@@ -20,24 +24,30 @@ Como configurar o parse-server
 - suba o servidor com ```docker-compose up -d```
 - obs: esteja com o container do mongo já em execução
 
-<h3>single-parse-server</h3>
+single-parse-server
+--
+
 - vá até a pasta single-parse-server e adicione suas configurações de push-notification no arquivo parse-server-config.json
 - no docker-compose preencha as variaveis com as informações do seu projeto
 - suba o servidor com ```docker-compose up -d```
 - obs: esteja com o container do mongo já em execução
 
-<h2>Parse-server com npm</h2>
+Parse-server com npm
+--
 
-<h4>Caso tenha algum problema com o npm no Mac OSX</h4>
+Caso tenha algum problema com o npm no Mac OSX
+--
 ```npm update npm -g```
 
-<h4>Instalar o parse-server e o mongo(validar)</h4>
+Instalar o parse-server e o mongo(validar)
 ```npm install -g parse-server mongodb-runner```
 
-<h4>Instalar o parse-dashboard</h4>
+<h4>Instalar o parse-dashboard
+--
 ```npm install -g parse-dashboard```
 
-<h4>Exemplo de arquivo de configurações do parse-server (parse-server-config.json)</h4>
+Exemplo de arquivo de configurações do parse-server (parse-server-config.json)
+--
 Mais detalhes em: [github parse-server push](https://github.com/ParsePlatform/parse-server/wiki/Push)
 ```json
   {
@@ -59,7 +69,8 @@ Mais detalhes em: [github parse-server push](https://github.com/ParsePlatform/pa
   }
 ```
   
-<h4>Exemplo de arquivo de configurações do parse-dashboard (parse-dashboard-config.json)</h4>
+Exemplo de arquivo de configurações do parse-dashboard (parse-dashboard-config.json)
+--
 ```json
   {
     "apps": [
@@ -85,9 +96,10 @@ Mais detalhes em: [github parse-server push](https://github.com/ParsePlatform/pa
   }
 ```
 
-<h4>Subir o servidor</h4>
-  - <i>mongodb-runner</i> ```mongodb-runner start```  
-  - <i>parse-server</i> ```<VERBOSE=1 para logs> parse-server parse-server-config.json```  
-  - <i>parse-dashboard</i> ```parse-dashboard --config parse-dashboard-config.json``` 
+Subir o servidor
+--
+  - _mongodb-runner_ ```mongodb-runner start```  
+  - _parse-server_ ```<VERBOSE=1 para logs> parse-server parse-server-config.json```  
+  - _parse-dashboard_ ```parse-dashboard --config parse-dashboard-config.json``` 
 
 Essas informações foram retiradas do github oficial do [Parse-Platform](https://github.com/ParsePlatform)
